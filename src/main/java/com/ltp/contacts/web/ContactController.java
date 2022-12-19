@@ -56,7 +56,7 @@ public class ContactController {
             @ApiResponse(responseCode = "201", description = "Successful creation of contact"),
             @ApiResponse(responseCode = "400", description = "Bad request: unsuccessful submission", content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
     })
-    @Operation(summary = "Get contact by Id", description = "Creates a contact from the provided payload")
+    @Operation(summary = "Create a new Contact", description = "Creates a contact from the provided payload")
     @PostMapping(value = "/contact", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Contact> createContact(@Valid @RequestBody Contact contact) {
         contactService.saveContact(contact);
